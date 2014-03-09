@@ -15,16 +15,16 @@ add_image_size( 'default', 800, 600, false );
 
 // REDIRECT TO HOME AFTER LOGOUT
 
-add_action('wp_logout','auto_redirect_after_logout');
-function auto_redirect_after_logout(){
+add_action('wp_logout','redir_home_after_logout');
+function redir_home_after_logout(){
   wp_redirect( home_url() );
   exit();
 }
 
 // ADD MEDIA UPLOADER SCRIPTS TO FRONTEND
 
-add_action('wp_enqueue_scripts', 'add_media_upload_scripts');
-function add_media_upload_scripts() {
+add_action('wp_enqueue_scripts', 'add_media_uploader_frontend');
+function add_media_uploader_frontend() {
     if ( is_admin() ) {
          return;
        }
@@ -33,8 +33,8 @@ function add_media_upload_scripts() {
 
 // CHECK IF REACH UPLOAD LIMIT
 
-add_filter( 'wp_handle_upload_prefilter', 'wp_check_upload_limits' );
-function wp_check_upload_limits( $file ) {
+add_filter( 'wp_handle_upload_prefilter', 'check_user_upload_limits' );
+function check_user_upload_limits( $file ) {
 
     $user_id = get_current_user_id();
 
@@ -63,8 +63,8 @@ function wp_check_upload_limits( $file ) {
 
 // ADD MEDIA TAG SUPPORT
 
-add_action( 'init', 'attachment_taxonomies' );
-function attachment_taxonomies() {
+add_action( 'init', 'add_attachment_taxonomies' );
+function add_attachment_taxonomies() {
     $taxonomies = array( 'post_tag' );
     foreach ( $taxonomies as $tax ) {
         register_taxonomy_for_object_type( $tax, 'attachment' );
@@ -73,8 +73,8 @@ function attachment_taxonomies() {
 
 // UNSET MEDIA UPLOADER TABS
 
-add_filter( 'media_view_strings', 'cor_media_view_strings' );
-function cor_media_view_strings( $strings ) {
+add_filter( 'media_view_strings', 'unset_media_uploader_tabs' );
+function unset_media_uploader_tabs( $strings ) {
     unset( $strings['insertFromUrlTitle'] );
     unset( $strings['createGalleryTitle'] );
     return $strings;
@@ -82,8 +82,8 @@ function cor_media_view_strings( $strings ) {
 
 // AUTO TAG MEDIA
 
-add_action('add_attachment', 'attachment_manipulation');
-function attachment_manipulation($id)
+add_action('add_attachment', 'auto_tag_media');
+function auto_tag_media($id)
 {
     if(wp_attachment_is_image($id)){
         wp_set_post_terms( $id, WP_CURRENT_TAG, 'post_tag', true );
@@ -92,8 +92,8 @@ function attachment_manipulation($id)
 
 // FILTER MEDIA BY TAG AND USER
 
-add_filter('parse_query', 'adm_show_users_own_attachments' );
-function adm_show_users_own_attachments( $wp_query ) {
+add_filter('parse_query', 'display_only_own_attachments' );
+function display_only_own_attachments( $wp_query ) {
     if ( strpos( $_SERVER[ 'REQUEST_URI' ], '/wp-admin/upload.php' ) !== false ) {
         if ( !current_user_can( 'level_5' ) ) {
             global $current_user;
@@ -102,8 +102,8 @@ function adm_show_users_own_attachments( $wp_query ) {
     }
 }
 
-add_filter( 'ajax_query_attachments_args', 'show_users_own_attachments', 1, 1 );
-function show_users_own_attachments( $query ) {
+add_filter( 'ajax_query_attachments_args', 'display_only_own_attachments_by_tag', 1, 1 );
+function display_only_own_attachments_by_tag( $query ) {
     $id = get_current_user_id();
     if( !current_user_can('manage_options') )
     $query['author'] = $id;
