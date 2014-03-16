@@ -164,6 +164,10 @@ function fadedEls(el, shift) {
     }
 
     router.init('/');
+
+    $('.social_connect_form a').click(function(e){
+        router.setRoute('/participar');
+    });
     
 
 })(jQuery);
