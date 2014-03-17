@@ -1,3 +1,21 @@
+Dropzone.options.myAwesomeDropzone = {
+  paramName: "file",
+  maxFilesize: 3,
+  acceptedFiles: "image/*",
+  dictInvalidFileType: "por favor, faça apenas upload de imagens",
+  dictFileTooBig: "máximo de 3mb por imagem",
+  init: function(){
+    this.on("error", function(error, msg){
+        $.growl.error({ title: "Erro", message: msg });
+        if(_gaq) _gaq.push(['_trackEvent', 'mnemopolis', 'error', msg]);
+    });
+    this.on("success", function(error, msg){
+        $.growl.notice({ title: "Obrigado!", message: "sua imagem foi enviada!" });
+        if(_gaq) _gaq.push(['_trackEvent', 'mnemopolis', 'upload']);
+    });
+  }
+};
+
 function fadedEls(el, shift) {
     el.css('opacity', 0);
 
@@ -111,29 +129,7 @@ function fadedEls(el, shift) {
         $('html').addClass('loaded');
         $(window).resize().scroll();
 
-        var _custom_media = true,
-            _orig_send_attachment = wp.media.editor.send.attachment;
-
-        $('#upload_btn').click(function(e) {
-            var send_attachment_bkp = wp.media.editor.send.attachment;
-            var button = $(this);
-            var id = button.attr('id').replace('_button', '');
-            _custom_media = true;
-            wp.media.editor.send.attachment = function(props, attachment){
-            if ( _custom_media ) {
-                //$("#"+id).val(attachment.url);
-            } else {
-                return _orig_send_attachment.apply( this, [props, attachment] );
-            };
-        }
-
-        wp.media.editor.open(button);
-        return false;
-        });
-
-        $('.add_media').on('click', function(){
-            _custom_media = false;
-        });
+        
     });
 
     /*$('.navbar a').click(function(e){

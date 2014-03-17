@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="./startup/flat-ui/css/flat-ui.css">
     <link rel="stylesheet" href="./startup/common-files/css/icon-font.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/jquery.growl.css">
+    <link rel="stylesheet" href="./dropzone/css/basic.css">
+    <link rel="stylesheet" href="./dropzone/css/dropzone.css">
+    <?php 
+        $analytics_id = "UA-44330723-1";
+    ?>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '<?php echo $analytics_id; ?>']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </head>
 <body>
 	<div class="page-wrapper">
@@ -74,6 +94,12 @@
 
                                     <hr/>
 
+                                    <form id="my-awesome-dropzone" action="./upload.php" class="dropzone"></form>
+
+                                    <hr/>
+
+                                    <p>No mês de junho de 2014, mês de aniversário dos <strong>#protestosBR</strong>, disponibilizaremos na rede o atlas com as imagens enviadas por todos.</p>
+
                             </div>
                         </div>
                     </div>
@@ -111,7 +137,9 @@
     <script src="./startup/common-files/js/jquery.parallax.min.js"></script>
     <script src="./startup/common-files/js/startup-kit.js"></script>
     <script src="./js/director.min.js"></script>
+    <script src="./js/jquery.growl.js"></script>
     <script src="./js/jquery.backgroundvideo.min.js"></script>
+    <script src="./dropzone/dropzone.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
