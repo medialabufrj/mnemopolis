@@ -33,6 +33,16 @@
     </script>
 </head>
 <body>
+<div id="seo" style="display:none;">
+    <h1>Chamada de Imagens Políticas Sobreviventes – CHIPS</h1>
+    <img src="./img/chips-chamada.jpg"/>
+    <p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, CHIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
+    <p>Este murmúrio anônimo de nossas lembranças será continuamente compartilhado na web, construindo uma constelação de imagens ou um atlas formado pelos continentes móveis de nossas reminiscências em torno dos protestos políticos no Brasil.</p>
+    <h4>Quais imagens dos protestos sobrevivem em sua memória?</h4>
+    <p>Envie pelo menos três imagens que sobrevêm, de imediato, em sua lembrança.</p>
+    <p>No mês de junho de 2014, mês de aniversário dos <strong>#protestosBR</strong>, disponibilizaremos na rede o atlas com as imagens enviadas por todos.</p>
+    <h2>Mnemópolis: memória, política e cidade nas imagens sobreviventes</h2>
+</div>
 	<div class="page-wrapper">
 		<header class="header-10">
             <div class="container">
@@ -78,7 +88,7 @@
 
                             <br/>
 
-                            <p>Se os algoritmos do Big Data criam bancos de imagens automatizados e massivos, CHIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
+                            <p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, CHIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
                             <p>Este murmúrio anônimo de nossas lembranças será continuamente compartilhado na web, construindo uma constelação de imagens ou um atlas formado pelos continentes móveis de nossas reminiscências em torno dos protestos políticos no Brasil.</p>
 
                             <br/>
