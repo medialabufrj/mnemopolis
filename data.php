@@ -28,4 +28,10 @@
    		echo $k . "," . $i . "\n";
    	}
 
+   	$now = date("Y-m-d H") . ":00";
+
+   	if(!$img[$now]){
+		echo $now . ",0\n";
+	}
+   	
 ?>
