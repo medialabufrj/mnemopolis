@@ -55,6 +55,7 @@
                         <ul class="nav pull-left">
                             <li><a href="#/chips">CHIPS</a></li>
                             <li><a href="#/participar">Participar</a></li>
+                            <li><a href="#/atlas">Atlas</a></li>
                         </ul>
                         <form class="navbar-form pull-left">
                             <a class="btn btn-info" href="http://medialabufrj.net">Ir para Medialab.UFRJ</a>
@@ -102,15 +103,23 @@
 
                                     <p>Envie pelo menos três imagens que sobrevêm, de imediato, em sua lembrança.</p>
 
-                                    <hr/>
-
                                     <form id="my-awesome-dropzone" action="./upload.php" class="dropzone"></form>
+                                    
+                                    <p>&nbsp;</p>
+                            </div>
+                            
+                            <div id="atlas">
 
-                                    <hr/>
+                                <h4>Atlas</h4>
 
-                                    <p>No mês de junho de 2014, mês de aniversário dos <strong>#protestosBR</strong>, disponibilizaremos na rede o atlas com as imagens enviadas por todos.</p>
+                                <p>No mês de junho de 2014, mês de aniversário dos <strong>#protestosBR</strong>, disponibilizaremos na rede o atlas com as imagens enviadas por todos.</p>
+
+                                <p><strong><span id="total"></span> imagens enviadas</strong></p>
+
+                                <div id="vis"></div>
 
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -150,6 +159,7 @@
     <script src="./js/jquery.growl.js"></script>
     <script src="./js/jquery.backgroundvideo.min.js"></script>
     <script src="./dropzone/dropzone.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
