@@ -34,9 +34,9 @@
 </head>
 <body>
 <div id="seo" style="display:none;">
-    <h1>Chamada de Imagens Políticas Sobreviventes – CHIPS</h1>
+    <h1>Chamada de Imagens Políticas Sobreviventes – ChIPS</h1>
     <img src="./img/chips-chamada.jpg"/>
-    <p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, CHIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
+    <p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, ChIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
     <p>Este murmúrio anônimo de nossas lembranças será continuamente compartilhado na web, construindo uma constelação de imagens ou um atlas formado pelos continentes móveis de nossas reminiscências em torno dos protestos políticos no Brasil.</p>
     <h4>Quais imagens dos protestos sobrevivem em sua memória?</h4>
     <p>Envie pelo menos três imagens que sobrevêm, de imediato, em sua lembrança.</p>
@@ -53,7 +53,7 @@
                      </div>
                     <div class="collapse navbar-collapse pull-right">
                         <ul class="nav pull-left">
-                            <li><a href="#/chips">CHIPS</a></li>
+                            <li><a href="#/chips">ChIPS</a></li>
                             <li><a href="#/participar">Participar</a></li>
                             <li><a href="#/atlas">Atlas</a></li>
                         </ul>
@@ -83,14 +83,15 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
 
-                            <h2>CHIPS</h2>
+                            <h2>ChIPS</h2>
 
                             <h4>Chamada de Imagens Políticas Sobreviventes</h4>
 
                             <br/>
+                            
+                            <p>Um atlas a construir coletivamente com as múltiplas imagens que vêm tecendo os protestos políticos desde junho de 2013 no Brasil. Como lembrar delas? Onde procurar, já que a sua migração é tão incerta e por tantos caminhos subjetivos, afetivos, coletivos, pessoais, maquínicos, orgânicos, inorgânicos, escondidos, revelados? E em seguida, onde guardá-las novamente e devolvê-las ao uso comum? Como lutar com elas e ao lado das imagens que estão por vir?</p>
 
-                            <p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, CHIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
-                            <p>Este murmúrio anônimo de nossas lembranças será continuamente compartilhado na web, construindo uma constelação de imagens ou um atlas formado pelos continentes móveis de nossas reminiscências em torno dos protestos políticos no Brasil.</p>
+                            <p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, ChIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
 
                             <br/>
                             
@@ -112,9 +113,11 @@
 
                                 <h4>Atlas</h4>
 
+                                <p>Este murmúrio anônimo de nossas lembranças será compartilhado na web, construindo uma constelação de imagens ou um atlas formado pelos continentes móveis de nossas reminiscências em torno dos protestos políticos no Brasil.</p>
+
                                 <p>No mês de junho de 2014, mês de aniversário dos <strong>#protestosBR</strong>, disponibilizaremos na rede o atlas com as imagens enviadas por todos.</p>
 
-                                <p><strong><span id="total"></span> imagens enviadas</strong></p>
+                                <p><strong>Fluxo das imagens enviadas</strong></p>
 
                                 <div id="vis"></div>
 
