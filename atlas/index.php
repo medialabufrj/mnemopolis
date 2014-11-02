@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Atlas #ProtestosBR</title>
+	<meta name="viewport" content="width=768">
 	<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="swipebox/css/swipebox.css">
@@ -18,8 +19,9 @@
 	<header id="header">
 
 		<h1 class="page-title">Atlas #ProtestosBR</h1>
-		
+
 		<div class="page-intro">
+			<img class="image-header" src="atlas-protestosbr.jpg" />
 			<p>Um atlas a construir coletivamente com as múltiplas imagens que vêm tecendo os protestos políticos desde junho de 2013 no Brasil. Como lembrar delas? Onde procurar, já que a sua migração é tão incerta e por tantos caminhos subjetivos, afetivos, coletivos, pessoais, maquínicos, orgânicos, inorgânicos, escondidos, revelados? E em seguida, onde guardá-las novamente e devolvê-las ao uso comum? Como lutar com elas e ao lado das imagens que estão por vir?</p>
 			<p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, ChIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
 			<p>Este projeto é resultado da <a href="..">Chamada de Imagens Políticas Sobreviventes</a></p>
@@ -64,7 +66,7 @@
 			}
 
 			$image_size = $w.'x'.$h;
-			$medium = '/mnemopolis/thumb.php?src=' . str_replace('../uploads','uploads',$image) . '&size=<720';
+			$medium = '/mnemopolis/thumb.php?src=' . str_replace('../uploads','uploads',$image) . '&size=<960';
 			$thumb = '/mnemopolis/thumb.php?src=' . str_replace('../uploads','uploads',$image) . '&zoom=1&crop=1&size=' . $image_size;
 			
 			echo "\n\t\t<a rel=\"atlas\" class=\"box size$box\" href=\"$medium\" target=\"_blank\">\n\t\t\t<img src=\"$thumb\" data-ratio=\"$ratio\" />\n\t\t</a>";
@@ -93,7 +95,8 @@
 			$('#container').nested({
 				minWidth: 64,
 				gutter: 10,
-				animate: false
+				animate: false,
+				resizeToFit: false
 			});
 
 			$('.box').swipebox();

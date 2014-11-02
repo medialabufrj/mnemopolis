@@ -3,6 +3,7 @@ body {
 	background: #000;
 	color: #fff;
 	margin: 50px;
+	min-width: 768px;
 }
 
 a {
@@ -20,6 +21,12 @@ p {
 	margin-top: 100px;
 	margin-bottom: 50px;
 	text-align: center;
+	display: none;
+}
+
+.image-header {
+	max-width: 100%;
+	height: auto;
 }
 
 .page-intro {
@@ -29,8 +36,12 @@ p {
 	max-width: 800px;
 }
 
+.addthis_sharing_toolbox {
+	min-height: 40px;
+}
+
 .box {
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .box img {
@@ -47,10 +58,25 @@ p {
 	opacity: 1;
 }
 
+.box:hover {
+	position: relative;
+	z-index: 2;
+}
+
 .box:hover img.show {
-	-webkit-transform: scale(1.1);
-	-moz-transform: scale(1.1);
-	-ms-transform: scale(1.1);
-	-o-transform: scale(1.1);
-	transform: scale(1.1);
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+.box.size22:hover img.show,
+.box.size23:hover img.show,
+.box.size32:hover img.show {
+	-webkit-transform: scale(2);
+	-moz-transform: scale(2);
+	-ms-transform: scale(2);
+	-o-transform: scale(2);
+	transform: scale(2);
 }
