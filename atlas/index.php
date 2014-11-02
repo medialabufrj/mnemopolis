@@ -14,17 +14,21 @@
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-545609ad2a7664df" async="async"></script>
 </head>
 <body>
-
-	<h1 class="page-title">Atlas #ProtestosBR</h1>
 	
-	<div class="page-intro">
-		<p>Um atlas a construir coletivamente com as múltiplas imagens que vêm tecendo os protestos políticos desde junho de 2013 no Brasil. Como lembrar delas? Onde procurar, já que a sua migração é tão incerta e por tantos caminhos subjetivos, afetivos, coletivos, pessoais, maquínicos, orgânicos, inorgânicos, escondidos, revelados? E em seguida, onde guardá-las novamente e devolvê-las ao uso comum? Como lutar com elas e ao lado das imagens que estão por vir?</p>
-		<p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, ChIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
-		<p>Este projeto é resultado da <a href="..">Chamada de Imagens Políticas Sobreviventes</a></p>
-		<p>&nbsp;</p>
-		<!-- Go to www.addthis.com/dashboard to customize your tools -->
-		<div class="addthis_sharing_toolbox"></div>
-	</div>
+	<header id="header">
+
+		<h1 class="page-title">Atlas #ProtestosBR</h1>
+		
+		<div class="page-intro">
+			<p>Um atlas a construir coletivamente com as múltiplas imagens que vêm tecendo os protestos políticos desde junho de 2013 no Brasil. Como lembrar delas? Onde procurar, já que a sua migração é tão incerta e por tantos caminhos subjetivos, afetivos, coletivos, pessoais, maquínicos, orgânicos, inorgânicos, escondidos, revelados? E em seguida, onde guardá-las novamente e devolvê-las ao uso comum? Como lutar com elas e ao lado das imagens que estão por vir?</p>
+			<p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, ChIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
+			<p>Este projeto é resultado da <a href="..">Chamada de Imagens Políticas Sobreviventes</a></p>
+			<p>&nbsp;</p>
+			<!-- Go to www.addthis.com/dashboard to customize your tools -->
+			<div class="addthis_sharing_toolbox"></div>
+		</div>
+
+	</header>
 	
 	<div id="container">
 	<?php
@@ -71,27 +75,55 @@
 	
 	<script type="text/javascript">
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-44330723-1']);
-        _gaq.push(['_trackPageview']);
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-44330723-1']);
+		_gaq.push(['_trackPageview']);
+		(function () {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
 	
 		$(function() { 
 		 
 			$('#container').nested({
 				minWidth: 64,
-				gutter: 10
+				gutter: 10,
+				animate: false
 			});
 
 			$('.box').swipebox();
+
+			$(window).scroll(function(e) {
+				
+				var wTop = $(window).scrollTop();
+				var wHeight = $(window).height();
+
+				$('.box img').each(function (i) {
+
+					var oTop = $(this).offset().top;
+					var oHeight = $(this).outerHeight();
+
+					if (oTop > wTop && oTop + oHeight < wTop + wHeight ) {
+						$(this).addClass('show')
+					} else {
+						$(this).removeClass('show')
+					}
+				});
+
+				$('#header').each(function (i) {
+					var oHeight = $(this).outerHeight();
+					$(this).css('opacity', Math.max(0, 1-(wTop/oHeight)));
+				});
+			})
+
+			setTimeout(function(){
+				$(window).scroll();
+			},1000);
 
 		});
 		

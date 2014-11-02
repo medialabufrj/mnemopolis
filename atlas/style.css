@@ -35,12 +35,22 @@ p {
 
 .box img {
 	width: 100%;
-	opacity: 1;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	transition: all 0.5s;
+	opacity: 0;
+	-webkit-transition: all 2s;
+	-moz-transition: all 2s;
+	-ms-transition: all 2s;
+	-o-transition: all 2s;
+	transition: all 2s;
 }
 
-.box:hover img {
-	opacity: 0.5;
+.box img.show {
+	opacity: 1;
+}
+
+.box:hover img.show {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
 }
