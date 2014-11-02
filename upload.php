@@ -18,8 +18,11 @@
 		$tempFile = $_FILES['file']['tmp_name'];
 		$ext = pathinfo($fileName, PATHINFO_EXTENSION);
 		$targetPath = dirname( __FILE__ ) . $ds . $storeFolder . $ds;
+		list($width, $height, $type, $attr) = getimagesize($tempFile);
 		//$targetFile =  $targetPath . $_FILES['file']['name'];
-		$targetFile =  $targetPath . time() . "_" . random_string(5) . "." . $ext;
+		//$targetFile =  $targetPath . time() . "_" . random_string(5) . "." . $ext;
+		$targetFile =  $targetPath . time() . "_" . random_string(5) . "_" . $width . "_" . $height . "." . $ext;
 		move_uploaded_file($tempFile,$targetFile);
+
 	}
 ?>
