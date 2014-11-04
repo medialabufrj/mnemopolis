@@ -22,9 +22,15 @@
 
 		<div class="page-intro">
 			<img class="image-header" src="atlas-protestosbr.jpg" />
-			<p>Um atlas a construir coletivamente com as múltiplas imagens que vêm tecendo os protestos políticos desde junho de 2013 no Brasil. Como lembrar delas? Onde procurar, já que a sua migração é tão incerta e por tantos caminhos subjetivos, afetivos, coletivos, pessoais, maquínicos, orgânicos, inorgânicos, escondidos, revelados? E em seguida, onde guardá-las novamente e devolvê-las ao uso comum? Como lutar com elas e ao lado das imagens que estão por vir?</p>
-			<p>Enquanto os algoritmos do Big Data criam bancos de imagens automatizados e massivos, ChIPS quer ativar outras formas de lembrar: uma memória fragmentária, afetiva, involuntária, cheia de lapsos e de imagens que sobrevivem segundo caminhos pouco sondáveis.</p>
-			<p>Este projeto é resultado da <a href="..">Chamada de Imagens Políticas Sobreviventes</a></p>
+			
+			<p>O Atlas #ProtestosBR é uma construção coletiva, resultado da <a href="..">Chamada de Imagens Políticas Sobreviventes / ChIPS</a>. As imagens que ele abriga foram enviadas anonimamente por aqueles que desejam colaborar na criação de uma memória visual comum dos protestos iniciados em junho de 2013 no Brasil. Este Atlas surgiu do desejo de criar um espaço capaz de simultaneamente receber, abrigar e devolver ao uso comum as imagens que teceram e tecem nossas lutas urbanas. Desejo também de reunir imagens políticas que circularam tão profusamente na web desde junho de 2013, com migração e destinos tão incertos. Mas não queríamos usar nenhum procedimento automatizado de coleta; queríamos que as imagens que compusessem esse Atlas e aqui viessem se abrigar, se reunir, fossem mobilizadas por algum gesto, desejo, lembrança. As imagens que aqui sobrevivem nos chegam portanto por caminhos pouco sondáveis, mas expressivos.</p>
+
+			<p>O Atlas #ProtestosBR é ao mesmo tempo de todos e de ninguém; por isso optamos pelo envio anônimo das imagens. Mas respeitamos e agradecemos imensamente os seus autores, aqueles que as fizeram ganhar mundo, de modo que se você for um deles e desejar que a sua imagem seja creditada, por favor <a href="mailto:medialabufrj@gmail.com" title="medialabufrj@gmail.com">entre em contato conosco</a>. Agradecemos a todos os colaboradores e reminiscentes que fizeram com que cada uma dessas imagens aqui aportasse.</p>
+
+			<p>Cada imagem que chega guarda um segredo sobre o seu trajeto e mobiliza secretamente imagens por vir. Vida secreta das imagens. Memória coletiva em ação. O Atlas #ProtestosBR permanecerá assim indefinidamente aberto à chegada de novas imagens, através da <a href="..">ChIPS</a>, e crescerá a cada nova colaboração, bem-vinda em qualquer hora.</p>
+
+			<p>Novembro de 2014, Brasil.</p>
+
 			<p>&nbsp;</p>
 			<!-- Go to www.addthis.com/dashboard to customize your tools -->
 			<div class="addthis_sharing_toolbox"></div>
@@ -120,7 +126,11 @@
 
 				$('#header').each(function (i) {
 					var oHeight = $(this).outerHeight();
-					$(this).css('opacity', Math.max(0, 1-(wTop/oHeight)));
+					if(wTop < oHeight-300){
+						$(this).css('opacity', 1);
+					}else{
+						$(this).css('opacity', Math.max(0, 1-((wTop-oHeight+300)/300)));	
+					}
 				});
 			})
 
