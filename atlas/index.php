@@ -46,7 +46,12 @@
 		$dirname = "../uploads/";
 		$images = glob($dirname."*");
 
-		shuffle($images);
+		if(isset($_GET['recentes'])) {
+			usort($images, create_function('$a,$b', 'return filemtime($b) - filemtime($a);'));
+		}
+		else {
+			shuffle($images);	
+		}
 
 		foreach($images as $image){
 			
